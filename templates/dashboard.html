@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Segmentation Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1 style="text-align:center;">📊 User Segmentation Dashboard</h1>
+
+    <div class="kpi-grid">
+        <div class="kpi-card">Total Users: <strong>{{ total_users }}</strong></div>
+        <div class="kpi-card">Avg CTR: <strong>{{ avg_ctr }}</strong></div>
+        <div class="kpi-card">Weekday Online: <strong>{{ avg_weekday }} hrs</strong></div>
+        <div class="kpi-card">Avg Conversion: <strong>{{ avg_conversion }}</strong></div>
+    </div>
+
+    <div class="grid">
+        <div class="chart">{{ bar_html | safe }}</div>
+        <div class="chart">{{ radar_html | safe }}</div>
+        <div class="chart">{{ gender_html | safe }}</div>
+        <div class="chart">{{ income_html | safe }}</div>
+        <div class="chart-full">{{ interest_html | safe }}</div>
+    </div>
+
+    <footer><a href="/predict"><button>Predict User Segment →</button></a></footer>
+</body>
+</html>
+
+
+

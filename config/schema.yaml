@@ -1,0 +1,57 @@
+columns:
+  - User ID: int
+  - Age: category
+  - Gender: category
+  - Location: category
+  - Language: category
+  - Education Level: category
+  - Likes and Reactions: int
+  - Followed Accounts: int
+  - Device Usage: category
+  - Time Spent Online (hrs/weekday): float
+  - Time Spent Online (hrs/weekend): float
+  - Click-Through Rates (CTR): float
+  - Conversion Rates: float
+  - Ad Interaction Time (sec): int
+  - Income Level: category
+  - Top Interests: category
+
+numerical_columns:
+  - Time Spent Online (hrs/weekday)
+  - Time Spent Online (hrs/weekend)
+  - Likes and Reactions
+  - Click-Through Rates (CTR)
+
+categorical_columns:
+  - Age
+  - Gender
+  - Income Level
+
+drop_columns:
+  - User ID
+  - Location
+  - Language
+  - Education Level
+  - Followed Accounts
+  - Device Usage
+  - Conversion Rates
+  - Ad Interaction Time (sec)
+  - Top Interests
+
+# for data transformation
+num_features:
+  - Time Spent Online (hrs/weekday)
+  - Time Spent Online (hrs/weekend)
+  - Likes and Reactions
+  - Click-Through Rates (CTR)
+
+oh_columns:  # one-hot encode
+  - Age
+  - Gender
+  - Income Level
+
+transform_columns:
+  - Time Spent Online (hrs/weekday)
+  - Time Spent Online (hrs/weekend)
+  - Likes and Reactions
+  - Click-Through Rates (CTR)

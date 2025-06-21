@@ -1,0 +1,23 @@
+ipykernel
+pandas
+numpy
+matplotlib
+plotly
+seaborn
+scipy
+scikit-learn
+imbalanced-learn  # instead of 'imblearn'
+pymongo
+from_root
+evidently==0.2.8
+dill
+PyYAML
+neuro_mf
+mypy-boto3-s3
+fastapi
+uvicorn
+jinja2
+python-multipart
+mlflow
+
+-e .

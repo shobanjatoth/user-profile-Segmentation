@@ -1,0 +1,7 @@
+model_selection:
+  module_0:
+    class: KMeans
+    module: sklearn.cluster
+    params:
+      n_clusters: 5
+      random_state: 42

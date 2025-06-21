@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+select, input[type=number] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.bg-picker {
+    margin-bottom: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.kpi-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background: #fff;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.chart {
+    background: rgb(214, 212, 212);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.chart-full {
+    grid-column: span 2;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}

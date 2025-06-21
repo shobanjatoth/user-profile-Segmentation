@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profiling & Segmentation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align:center;">🧠 User Profiling & Segmentation</h1>
+    <h2>User Input Form</h2>
+
+    <label>Choose Background:</label>
+    <select class="bg-picker" onchange="changeBackground(this.value)">
+        <option value="#f5f5f5">Default</option>
+        <option value="#fff8e1">Warm</option>
+        <option value="#e1f5fe">Cool</option>
+        <option value="#fce4ec">Pink</option>
+        <option value="#e8f5e9">Green</option>
+    </select>
+
+    <form method="post" action="/predict">
+        <label>Age</label>
+        <select name="Age">
+            <option>18-24</option>
+            <option>25-34</option>
+            <option>35-44</option>
+            <option>45-54</option>
+            <option>55+</option>
+        </select>
+
+        <label>Gender</label>
+        <select name="Gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Income Level</label>
+        <select name="Income_Level">
+            <option>0-10K</option>
+            <option>10K-20K</option>
+            <option>20K-30K</option>
+            <option>30K-50K</option>
+            <option>50K+</option>
+        </select>
+
+        <label>Time Spent Online (hrs/weekday)</label>
+        <input type="number" step="0.1" name="Time_Spent_Online_hrs_weekday" required>
+
+        <label>Time Spent Online (hrs/weekend)</label>
+        <input type="number" step="0.1" name="Time_Spent_Online_hrs_weekend" required>
+
+        <label>Likes and Reactions</label>
+        <input type="number" name="Likes_and_Reactions" required>
+
+        <label>Click-Through Rate (CTR)</label>
+        <input type="number" step="0.01" name="Click_Through_Rates_CTR" required>
+
+        <button type="submit">Get Cluster</button>
+    </form>
+</div>
+
+<script>
+function changeBackground(color) {
+    document.body.style.backgroundColor = color;
+}
+</script>
+</body>
+</html>
+
+
