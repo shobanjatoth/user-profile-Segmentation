@@ -2,6 +2,7 @@ import os
 import sys
 import pandas as pd
 import importlib
+import joblib
 from sklearn.metrics import silhouette_score
 from src.logger import logging
 from src.exception import USvisaException
@@ -44,8 +45,9 @@ class ModelTrainer:
 
             # ✅ Start MLflow experiment
             mlflow.set_experiment("Model_Trainer_Clustering")
+           
 
-            with mlflow.start_run(run_name="ClusterModelSearch"):
+            with mlflow.start_run(run_name="ClusterModelSearch",nested=True):
                 mlflow.log_param("transformed_data_path", self.data_transformation_artifact.transformed_data_path)
 
                 logging.info("🔍 Searching best model from model.yaml")
@@ -83,7 +85,8 @@ class ModelTrainer:
                 # ✅ Log best model details and artifact
                 mlflow.log_param("best_model", best_model_name)
                 mlflow.log_metric("best_silhouette_score", best_score)
-                mlflow.sklearn.log_model(best_model, artifact_path="best_model")
+                joblib.dump(best_model, "best_model.pkl")  # ✅ Save model locally
+                mlflow.log_artifact("best_model.pkl") 
 
                 return ModelTrainerArtifact(
                     model_path=self.model_trainer_config.trained_model_file_path,

@@ -6,7 +6,7 @@ plotly
 seaborn
 scipy
 scikit-learn
-imbalanced-learn  # instead of 'imblearn'
+imbalanced-learn
 pymongo
 from_root
 evidently==0.2.8
@@ -19,5 +19,7 @@ uvicorn
 jinja2
 python-multipart
 mlflow
-
+dagshub
+python-dotenv
 -e .
+
