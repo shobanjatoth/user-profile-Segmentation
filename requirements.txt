@@ -9,7 +9,6 @@ scikit-learn
 imbalanced-learn
 pymongo
 from_root
-evidently==0.2.8
 dill
 PyYAML
 neuro_mf
@@ -22,4 +21,5 @@ mlflow
 dagshub
 python-dotenv
 -e .
+
 
