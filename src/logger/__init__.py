@@ -1,20 +1,31 @@
 import logging
 import os
-
-from from_root import from_root
 from datetime import datetime
 
-LOG_FILE = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
+# Create log directory (within app container – ephemeral on Render)
+LOG_DIR = "logs"
+os.makedirs(LOG_DIR, exist_ok=True)
 
-log_dir = 'logs'
+# Create unique log file with timestamp
+LOG_FILE = f"{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.log"
+LOG_PATH = os.path.join(LOG_DIR, LOG_FILE)
 
-logs_path = os.path.join(from_root(), log_dir, LOG_FILE)
+# Formatter for logs
+formatter = logging.Formatter("[ %(asctime)s ] %(name)s - %(levelname)s - %(message)s")
 
-os.makedirs(log_dir, exist_ok=True)
+# File Handler (logs saved while app is running)
+file_handler = logging.FileHandler(LOG_PATH)
+file_handler.setFormatter(formatter)
 
+# Console Handler (for Render Logs tab)
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(formatter)
 
+# Root logger setup
 logging.basicConfig(
-    filename=logs_path,
-    format="[ %(asctime)s ] %(name)s - %(levelname)s - %(message)s",
-    level=logging.DEBUG,
+    level=logging.INFO,
+    handlers=[file_handler, console_handler]
 )
+
+# Optional: expose logger instance
+logger = logging.getLogger(__name__)
